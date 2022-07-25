@@ -1,12 +1,6 @@
-package *;
-
-// import DataCollection.Vessel.Language.Word;
-// import DataCollection.judgement.Coolean;
-// import m_Exception.Language_error;
-// import m_Exception.null_escape_char_error;
-
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Objects;
 
 /**
  * @author zhongziming
