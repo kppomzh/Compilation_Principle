@@ -3,10 +3,10 @@ package lesson2;
 public class PrintGrammarTree {
     private static String indentation="    ",line="——";
 
-    public static void print(Node node){
+    public static <T> void print(Node node){
         print(node,0);
     }
-    private static void print(Node node,int level){
+    private static <T> void print(Node node, int level){
         String preStr = "";     // 打印前缀
         for (int i = 0; i < level; i++) {
             preStr += "    ";

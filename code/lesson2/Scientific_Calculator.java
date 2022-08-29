@@ -17,12 +17,12 @@ public class Scientific_Calculator {
         String[] ag = {
 //                "1+()*3",
 //                "1+cos()*3",
-                "1*((3*((1+2)-4)+5)-13)",
-                "(1+3.14)*4",
+                "1*((3*((1+2)-4)+5)-13)",  //-11
+                "(1+3.14)*4",     //16.56
                 "(sin(1)+3.14)*4",
                 "(sin(1)+sin(2*3))/4",
-                "pow(2,10)",
-                "1+2*3"
+                "pow(2,10)",   //1024
+                "1+2*3"   //7
         };
         for (int i = 0; i < ag.length; i++) {
             try {
@@ -31,7 +31,7 @@ public class Scientific_Calculator {
                 calc.setWords(words);
                 Node node = calc.derivation();
 
-//                PrintGrammarTree.print(node);
+//                PrintGrammarTree.printTree(node);
 
                 calc.stipulation(calc.treeRootNode);
                 System.out.println(calc.nodeStack.pop().getContent().toString());
