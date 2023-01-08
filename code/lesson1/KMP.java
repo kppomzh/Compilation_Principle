@@ -28,18 +28,18 @@ public class KMP {
         int[] next=new int[needle.length()];
         call_nextArray(needle,next);
 
-        int loop_h = 0,loop_n=-1;
-        while ((loop_n>-1||loop_h <= haystack.length()-needle.length())&&loop_h < haystack.length())
+        int sch_idx = 0,next_idx=-1;
+        while ((next_idx>-1||sch_idx <= haystack.length()-needle.length())&&sch_idx < haystack.length())
         {
-            while(loop_n>-1&&needle.charAt(loop_n+1)!=haystack.charAt(loop_h)){
-                loop_n=next[loop_n];
+            while(next_idx>-1&&needle.charAt(next_idx+1)!=haystack.charAt(sch_idx)){
+                next_idx=next[next_idx];
             }
-            if(needle.charAt(loop_n+1)==haystack.charAt(loop_h))
-                loop_n++;
-            if(loop_n==needle.length()-1)
-                return loop_h-needle.length()+1;
+            if(needle.charAt(next_idx+1)==haystack.charAt(sch_idx))
+                next_idx++;
+            if(next_idx==needle.length()-1)
+                return sch_idx-needle.length()+1;
 
-            loop_h++;
+            sch_idx++;
         }
         return -1;
     }
